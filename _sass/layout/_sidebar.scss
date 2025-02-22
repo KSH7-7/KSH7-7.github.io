@@ -174,6 +174,7 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
     }
   }
 
+  /* 🔥 사이드바 하단 아이콘 hover 시 컬러 아이콘 변경 */
   .sidebar-bottom {
     padding-left: 2rem;
     padding-right: 1rem;
@@ -223,6 +224,33 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
 
     i {
       line-height: $btn-size;
+    }
+
+    /* 🔥 Hover 아이콘 변경 로직 */
+    .icon-hover {
+      position: relative;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+
+      .hover-icon {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:hover {
+        .default-icon {
+          display: none;
+        }
+
+        .hover-icon {
+          display: inline-block;
+        }
+      }
     }
 
     #mode-toggle {
