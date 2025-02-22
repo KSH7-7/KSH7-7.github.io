@@ -1,6 +1,8 @@
 .icon-hover {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 30px;
   height: 30px;
 }
@@ -8,12 +10,10 @@
 .icon-hover .hover-icon {
   display: none; /* 기본적으로 컬러 아이콘 숨김 */
   position: absolute;
-  left: 0;
-  top: 0;
 }
 
 .icon-hover:hover .default-icon {
-  display: none; /* hover 시 FontAwesome 기본 아이콘 숨김 */
+  display: none; /* hover 시 FontAwesome 아이콘 숨김 */
 }
 
 .icon-hover:hover .hover-icon {
