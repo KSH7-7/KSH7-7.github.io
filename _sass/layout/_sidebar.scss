@@ -174,7 +174,6 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
     }
   }
 
-  /* 🔥 사이드바 하단 아이콘 hover 시 컬러 아이콘 변경 */
   .sidebar-bottom {
     padding-left: 2rem;
     padding-right: 1rem;
@@ -226,39 +225,6 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
       line-height: $btn-size;
     }
 
-    /* 🔥 Hover 아이콘 변경 로직 */
-    .icon-hover {
-      position: relative;
-      display: inline-block;
-      width: 1.2rem; /* FontAwesome 95% 크기와 일치 */
-      height: 1.2rem;
-      overflow: hidden;
-      text-align: center;
-    }
-
-    .icon-hover .default-icon {
-      font-size: 95%; /* FontAwesome 아이콘과 크기 동일 */
-      line-height: 1.2rem;
-    }
-
-    .icon-hover .hover-icon {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 95%; /* FontAwesome 아이콘 크기와 동일 */
-      height: 95%;
-      transform: translate(-50%, -50%);
-    }
-
-    .icon-hover:hover .default-icon {
-      display: none;
-    }
-
-    .icon-hover:hover .hover-icon {
-      display: inline-block;
-    }
-
     #mode-toggle {
       @extend %button;
       @extend %sidebar-links;
@@ -289,4 +255,48 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
       transform: translateX(v.$sidebar-width);
     }
   }
+}
+
+.sidebar-bottom a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-bottom a i {
+  transition: opacity 0.15s ease-out;
+}
+
+.sidebar-bottom a .hover-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.2rem;
+  height: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Hover 시 기본 아이콘 숨기고 이미지 표시 */
+.sidebar-bottom a:hover i {
+  opacity: 0;
+}
+
+.sidebar-bottom a:hover .hover-icon {
+  opacity: 1;
+}
+
+/* 다크 모드 적용 */
+.dark {
+  display: none;
+}
+
+[data-mode='dark'] .dark {
+  display: inline-block;
+}
+
+[data-mode='dark'] .light {
+  display: none;
 }

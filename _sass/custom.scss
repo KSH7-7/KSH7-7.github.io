@@ -1,21 +1,14 @@
-.icon-hover {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
+@font-face {
+  font-family: 'CustomFont';
+  src: url("{{ '/assets/fonts/Griun_NoltoTAENGGU-Rg.ttf' | absolute_url }}")
+    format('truetype');
 }
 
-.icon-hover .hover-icon {
-  display: none; /* 기본적으로 컬러 아이콘 숨김 */
-  position: absolute;
-}
+/* 기본 폰트 덮어쓰기 */
+$font-family-base: 'CustomFont', sans-serif;
+$font-family-heading: 'CustomFont', serif;
 
-.icon-hover:hover .default-icon {
-  display: none; /* hover 시 FontAwesome 아이콘 숨김 */
-}
-
-.icon-hover:hover .hover-icon {
-  display: inline-block; /* hover 시 컬러 아이콘 표시 */
+/* 전체 적용 */
+body {
+  font-family: $font-family-base;
 }

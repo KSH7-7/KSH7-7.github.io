@@ -1,5 +1,4 @@
 <!-- The Side Bar -->
-
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
     <a href="{{ '/' | relative_url }}" id="avatar" class="rounded-circle">
@@ -31,16 +30,14 @@
           <a href="{{ tab.url | relative_url }}" class="nav-link">
             <i class="fa-fw {{ tab.icon }}"></i>
             {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
-
             <span>{{ site.data.locales[include.lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
           </a>
         </li>
-        <!-- .nav-item -->
       {% endfor %}
     </ul>
   </nav>
 
-  <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
+  <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
     {% unless site.theme_mode %}
       <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
         <i class="fas fa-adjust"></i>
@@ -69,31 +66,23 @@
       {% endcase %}
 
       {% if url %}
-      <a
-      href="{{ url }}"
-      aria-label="{{ entry.type }}" class="icon-hover"
-      {% assign link_types = '' %}
+      <a href="{{ url }}" aria-label="{{ entry.type }}"
+      {% unless entry.noblank %}
+        target="_blank" rel="noopener noreferrer"
+      {% endunless %}
+   >
+   <!-- Font Awesome 기본 아이콘 -->
+    <i class="{{ entry.icon }}"></i>
 
-          {% unless entry.noblank %}
-            target="_blank"
-            {% assign link_types = 'noopener noreferrer' %}
-          {% endunless %}
+    <!-- Hover 시 표시될 light 모드용 아이콘 -->
+     <img src="{{ '/assets/icons/' | relative_url }}{{ entry.type }}.svg"
+     alt="{{ entry.type }} icon" class="hover-icon hover-icon-light light">
 
-          {% if entry.type == 'mastodon' %}
-            {% assign link_types = link_types | append: ' me' | strip %}
-          {% endif %}
-
-          {% unless link_types == empty %}
-            rel="{{ link_types }}"
-          {% endunless %}
-
-        >
-        <!-- 기본 FontAwesome 아이콘 (hover 전) -->
-         <i class="{{ entry.icon }} default-icon"></i>
-         <!-- 컬러 아이콘 (hover 후) -->
-          <img src="/assets/icons/{{ entry.type }}.svg" class="hover-icon" width="30" height="30" alt="{{ entry.type }}">
-        </a>
-      {% endif %}
+     <!-- Hover 시 표시될 dark 모드용 아이콘 -->
+      <img src="{{ '/assets/icons/' | relative_url }}{{ entry.type }}-dark.svg"
+      alt="{{ entry.type }} icon dark" class="hover-icon hover-icon-dark dark">
+    </a>
+    {% endif %}
     {% endfor %}
   </div>
   <!-- .sidebar-bottom -->
