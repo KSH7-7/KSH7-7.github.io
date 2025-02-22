@@ -6,9 +6,11 @@ gemspec
 
 gem "html-proofer", "~> 5.0", group: :test
 
-platforms :mingw, :x64_mingw, :mswin, :jruby do
-  gem "tzinfo", ">= 1", "< 3"
-  gem "tzinfo-data"
-end
+gem "jekyll", "~> 4.3.2"
+gem "webrick"
+gem "tzinfo", ">= 1", "< 3"
+gem "tzinfo-data"
 
-gem "wdm", "~> 0.2.0", :platforms => [:mingw, :x64_mingw, :mswin]
+platforms :mingw, :x64_mingw, :mswin do
+  gem "wdm", "~> 0.2.0"
+end
