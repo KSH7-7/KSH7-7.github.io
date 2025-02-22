@@ -79,16 +79,18 @@
             {% assign link_types = 'noopener noreferrer' %}
           {% endunless %}
 
-          {% if entry.type == 'mastodon' %}
+          {% if entry.type == ' ' %}
             {% assign link_types = link_types | append: ' me' | strip %}
           {% endif %}
 
           {% unless link_types == empty %}
             rel="{{ link_types }}"
           {% endunless %}
-          class="icon-hover"
+
         >
-          <i class="{{ entry.icon }}"></i>
+        <!-- 기본 FontAwesome 아이콘 (hover 전) -->
+         <i class="{{ entry.icon }}"></i>
+           <!-- 컬러 아이콘 (hover 후) -->
           <img src="/assets/icons/{{ entry.type }}.svg" class="hover-icon" width="30" height="30" alt="{{ entry.type }}">
         </a>
       {% endif %}
