@@ -127,14 +127,14 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
       opacity: 0.9;
       width: 100%;
 
-      @include mx.pl-pr(1.5rem);
+      @include mx.pl-pr(0.75rem);
 
       @include bp.xxxl {
-        @include mx.pl-pr(2.75rem);
+        @include mx.pl-pr(0.75rem);
       }
 
       a.nav-link {
-        @include mx.pt-pb(0.6rem);
+        @include mx.pt-pb(0.5rem);
 
         display: flex;
         align-items: center;

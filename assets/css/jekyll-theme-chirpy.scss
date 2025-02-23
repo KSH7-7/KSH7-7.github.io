@@ -2,9 +2,26 @@
 ---
 
 @use 'main
-{%- if jekyll.environment == 'production' -%}
+{%- if jekyll.environment == ' production ' -%}
   .bundle
 {%- endif -%}
 ';
 
 /* append your custom style below */
+@font-face {
+  font-family: 'Custom';
+  src: url("{{ '/assets/fonts/Griun_NoltoTAENGGU-Rg.woff2' | relative_url }}")
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NotoSansKR';
+  src: url("{{ '/assets/fonts/NotoSansKR-VariableFont_wght.woff2' | relative_url }}")
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
