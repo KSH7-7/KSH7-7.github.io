@@ -24,6 +24,7 @@ description: >- # used by seo meta and the atom feed
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://KSH7-7.github.io"
+baseurl: "" # the subpath of your site, e.g. '/blog'
 
 github:
   username: KSH7-7 # change to your GitHub username
@@ -226,4 +227,5 @@ jekyll-archives:
     category: /categories/:name/
 
 include:
-  - assets/fonts
+  - assets
+  - _pages
