@@ -14,11 +14,8 @@ layout: compress
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
-  <head>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-    {% include head.html %}
-  </head>
+
+  {% include head.html %}
   <body>
     {% include sidebar.html lang=lang %}
 
@@ -78,7 +75,7 @@ layout: compress
     {% endif %}
 
     <!-- Embedded scripts -->
-    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
     {% for _include in layout.script_includes %}
       {% assign _include_path = _include | append: '.html' %}
       {% include {{ _include_path }} %}
