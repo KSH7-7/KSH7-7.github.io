@@ -13,7 +13,6 @@
     <a class="site-title d-block" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p>
   </header>
-  <!-- .profile-wrapper -->
 
   <nav class="flex-column flex-grow-1 w-100 ps-0">
     <ul class="nav">
@@ -24,7 +23,8 @@
           <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
         </a>
       </li>
-      <!-- the real tabs -->
+
+      <!-- the real tabs (자동 추가) -->
       {% for tab in site.tabs %}
         <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
           <a href="{{ tab.url | relative_url }}" class="nav-link">
@@ -70,21 +70,14 @@
       {% unless entry.noblank %}
         target="_blank" rel="noopener noreferrer"
       {% endunless %}
-   >
-   <!-- Font Awesome 기본 아이콘 -->
-    <i class="{{ entry.icon }}"></i>
-
-    <!-- Hover 시 표시될 light 모드용 아이콘 -->
-     <img src="{{ '/assets/icons/' | relative_url }}{{ entry.type }}.svg"
-     alt="{{ entry.type }} icon" class="hover-icon hover-icon-light light">
-
-     <!-- Hover 시 표시될 dark 모드용 아이콘 -->
-      <img src="{{ '/assets/icons/' | relative_url }}{{ entry.type }}-dark.svg"
-      alt="{{ entry.type }} icon dark" class="hover-icon hover-icon-dark dark">
-    </a>
-    {% endif %}
+      >
+        <i class="{{ entry.icon }}"></i>
+        <img src="{{ '/assets/icons/' | relative_url }}{{ entry.type }}.svg"
+        alt="{{ entry.type }} icon" class="hover-icon hover-icon-light light">
+        <img src="{{ '/assets/icons/' | relative_url }}{{ entry.type }}-dark.svg"
+        alt="{{ entry.type }} icon dark" class="hover-icon hover-icon-dark dark">
+      </a>
+      {% endif %}
     {% endfor %}
   </div>
-  <!-- .sidebar-bottom -->
 </aside>
-<!-- #sidebar -->
