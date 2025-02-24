@@ -4,7 +4,7 @@ permalink: /test/
 order: 5
 ---
 > 이 페이지는 각종 기능 테스트를 위해 추가된 페이지입니다.  
-{: .prompt-tip }
+{: .prompt-warning }
 <hr>
 <div style="border: 1px solid #ccc; padding: 10px; border-radius: 10px; white-space: pre-wrap; text-align: center;">
 <b>翼をください
