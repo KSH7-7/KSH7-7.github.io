@@ -102,6 +102,7 @@ order: 5
 날개를 퍼덕이며 가고 싶어요
 </div>
 <br>
+
 <div style="border: 1px solid #ccc; padding: 10px; border-radius: 10px; white-space: pre-wrap; text-align: center;">
 <b>Komm, süsser Tod
 《오라, 달콤한 죽음이여》</b> 
