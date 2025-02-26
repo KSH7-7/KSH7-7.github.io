@@ -6,7 +6,7 @@ order: 5
 > 이 페이지는 각종 기능 테스트를 위해 추가된 페이지입니다.  
 {: .prompt-warning }
 <hr>
-<div style="border: 1px solid #ccc; padding: 10px; border-radius: 10px; white-space: pre-wrap; text-align: center;">
+<div style="border: 1px solid #ccc; padding: 10px; border-radius: 10px; white-space: pre-wrap; text-align: center; pre-wrap !important;">
 <b>翼をください
 《날개를 주세요》</b>
 아카이토리, 1971년
@@ -103,7 +103,7 @@ order: 5
 </div>
 <br>
 
-<div style="border: 1px solid #ccc; padding: 10px; border-radius: 10px; white-space: pre-wrap; text-align: center;">
+<div style="border: 1px solid #ccc; padding: 10px; border-radius: 10px; white-space: pre-wrap; text-align: center; pre-wrap !important;">
 <b>Komm, süsser Tod
 《오라, 달콤한 죽음이여》</b> 
 아리안 슈라이버, 1997년
