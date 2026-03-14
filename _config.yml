@@ -26,20 +26,19 @@ description: >- # used by seo meta and the atom feed
 url: "https://ksh7-7.github.io"
 
 github:
-  username: KSH7-7 # change to your GitHub username
+  username: # KSH7-7 제거됨
 
 twitter:
-  username: twitter_username # change to your Twitter username
+  username: # twitter_username 제거됨
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: KSH
-  email: thsutleo.psi@gmail.com # change to your email address
+  name: # KSH 제거됨
+  email: # thsutleo.psi@gmail.com 제거됨
   links:
     # The first element serves as the copyright owner's link
-    - https://github.com/KSH7-7
-    - https://instagram.com/seonghyun__k
+    # 모든 링크 제거됨
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
@@ -59,7 +58,7 @@ webmaster_verifications:
 # Web Analytics Settings
 analytics:
   google:
-    id: "G-D1N0GPK3NX"
+    id: "" # ID 제거됨
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:

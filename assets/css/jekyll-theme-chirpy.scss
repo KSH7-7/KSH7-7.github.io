@@ -7,6 +7,8 @@
 {%- endif -%}
 ';
 
+@use "custom";
+
 /* append your custom style below */
 @font-face {
   font-family: 'Custom';
@@ -45,5 +47,5 @@
 
 /* 스크롤바 핸들 hover 시 */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(85, 85, 85, 0.4); /* 기존 #555 -> 투명도 40% */
 }
+

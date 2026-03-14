@@ -120,3 +120,26 @@ refactor: true
 {% if paginator.total_pages > 1 %}
   {% include post-paginator.html %}
 {% endif %}
+
+<!-- Migration Overlay -->
+<div class="migration-overlay">
+  <div class="migration-box">
+    <div class="migration-title-bar">
+      <div class="migration-title-bar-controls">
+        <span class="traffic-light close"></span>
+        <span class="traffic-light minimize"></span>
+        <span class="traffic-light zoom"></span>
+      </div>
+      <div class="migration-title-bar-text">OMG</div>
+    </div>
+    <div class="migration-content">
+      <div class="flickering-light-container">
+        <img src="{{ '/assets/img/lightoff.png' | relative_url }}" class="light-img light-off" alt="Light Off">
+        <img src="{{ '/assets/img/lighton.png' | relative_url }}" class="light-img light-on" alt="Light On">
+      </div>
+      <h1>Woops!</h1>
+      <p>We have moved to a new home!<br>Click OK to move to the new site.</p>
+      <a href="https://ksh7-7pp.pages.dev" class="migration-button">OK</a>
+    </div>
+  </div>
+</div>

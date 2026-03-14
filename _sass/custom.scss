@@ -1,0 +1,194 @@
+/* Migration Overlay Styles */
+.migration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+[data-mode="dark"] .migration-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.migration-box {
+  background: #ececec; /* Leopard light gray */
+  padding: 0;
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  max-width: 500px;
+  width: 90%;
+  /* Restoring authentic Mac OS X font stack */
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "AppleGothic", "Apple SD Gothic Neo", "Tahoma", "Verdana", sans-serif;
+  color: #333;
+  overflow: hidden;
+  border: 1px solid #999;
+}
+
+[data-mode="dark"] .migration-box {
+  background: #2a2a2a;
+  color: #eee;
+  border-color: #444;
+}
+
+.migration-title-bar {
+  background: linear-gradient(to bottom, #ebebeb 0%, #d1d1d1 100%); /* Glossy Leopard gradient */
+  border-bottom: 1px solid #b1b1b1;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 10px;
+}
+
+[data-mode="dark"] .migration-title-bar {
+  background: linear-gradient(to bottom, #444 0%, #333 100%);
+  border-bottom-color: #222;
+}
+
+.migration-title-bar-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+  font-family: inherit;
+}
+
+[data-mode="dark"] .migration-title-bar-text {
+  color: #bbb;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.migration-title-bar-controls {
+  position: absolute;
+  left: 8px;
+  display: flex;
+  gap: 6px;
+}
+
+.traffic-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.close { background: #ff5f57; }
+.minimize { background: #ffbd2e; }
+.zoom { background: #28c840; }
+
+.migration-content {
+  padding: 30px;
+}
+
+.migration-box h1 {
+  font-size: 16px; 
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.migration-box p {
+  font-size: 13px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-family: inherit;
+}
+
+.migration-button {
+  display: inline-block;
+  padding: 4px 30px;
+  background: linear-gradient(to bottom, #5cb4f7 0%, #1a82e2 50%, #0066cc 51%, #3399ff 100%);
+  color: white !important;
+  text-decoration: none !important;
+  border: 1px solid #003366;
+  border-radius: 20px;
+  font-size: 12px; /* Slightly smaller for more authentic Aqua button look */
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.4);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+  min-width: 80px;
+  font-family: inherit;
+}
+
+.migration-button:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
+}
+
+.migration-button:active {
+  background: #0055aa;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+}
+
+[data-mode="dark"] .migration-button {
+  /* Keep the blue button for authenticity even in dark mode */
+}
+
+.flickering-light-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px auto;
+  /* Disable any inherited shimmer */
+  &, & * {
+    background: none !important;
+    &::before, &::after {
+      display: none !important;
+    }
+  }
+}
+
+.light-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Disable shimmer/wiper effect */
+  background: none !important;
+  &::before, &::after {
+    display: none !important;
+  }
+}
+
+.light-off {
+  z-index: 1;
+}
+
+.light-on {
+  z-index: 2;
+  opacity: 1;
+  animation: flicker 3s infinite;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  19%, 21%, 23%, 24%, 54%, 56% {
+    opacity: 0;
+  }
+  20%, 55% {
+    opacity: 0.5;
+  }
+  21.5%, 56.5% {
+    opacity: 0.2;
+  }
+  /* Random subtle jitters */
+  80% { opacity: 0.9; }
+  81% { opacity: 1; }
+}
